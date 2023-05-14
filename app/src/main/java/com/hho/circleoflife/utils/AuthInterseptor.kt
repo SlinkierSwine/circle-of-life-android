@@ -1,7 +1,10 @@
 package com.hho.circleoflife.utils
 
 import android.content.SharedPreferences
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import com.hho.circleoflife.models.LoginRequestModel
+import com.hho.circleoflife.ui.auth.AuthFragment
 import okhttp3.Interceptor
 import okhttp3.Request
 import okhttp3.Response

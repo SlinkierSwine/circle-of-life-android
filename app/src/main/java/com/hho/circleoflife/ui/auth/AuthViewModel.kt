@@ -1,6 +1,10 @@
-package com.hho.circleoflife.viewmodels
+package com.hho.circleoflife.ui.auth
 
-import androidx.lifecycle.*
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.viewModelScope
 import com.hho.circleoflife.models.UserInfoResponseModel
 import com.hho.circleoflife.repository.Repository
 import kotlinx.coroutines.flow.catch
@@ -8,7 +12,8 @@ import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 
-class MainViewModel(
+
+class AuthViewModel(
     private val repository: Repository
 ): ViewModel() {
 
@@ -33,7 +38,7 @@ class MainViewModel(
         private val repository: Repository
     ): ViewModelProvider.Factory {
         override fun <T : ViewModel> create(modelClass: Class<T>): T {
-            return MainViewModel(repository) as T
+            return AuthViewModel(repository) as T
         }
     }
 

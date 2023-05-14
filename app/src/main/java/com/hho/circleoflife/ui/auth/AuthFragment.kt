@@ -1,4 +1,4 @@
-package com.hho.circleoflife.ui.gallery
+package com.hho.circleoflife.ui.auth
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -8,15 +8,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.hho.circleoflife.databinding.FragmentGalleryBinding
+import com.hho.circleoflife.databinding.FragmentAuthBinding
 import com.hho.circleoflife.repository.Repository
-import com.hho.circleoflife.viewmodels.MainViewModel
 
 
-class GalleryFragment : Fragment() {
+class AuthFragment : Fragment() {
 
-    private var _binding: FragmentGalleryBinding? = null
-    private lateinit var viewModel: MainViewModel
+    private var _binding: FragmentAuthBinding? = null
+    private lateinit var viewModel: AuthViewModel
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -31,13 +30,13 @@ class GalleryFragment : Fragment() {
 //        val viewModel =
 //                ViewModelProvider(this).get(MainViewModel::class.java)
 
-        _binding = FragmentGalleryBinding.inflate(inflater, container, false)
+        _binding = FragmentAuthBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val sharedPreferences = this.requireActivity().getSharedPreferences("pref", Context.MODE_PRIVATE)
-        val factory = MainViewModel.Factory(Repository(sharedPreferences))
+        val factory = AuthViewModel.Factory(Repository(sharedPreferences))
 
-        viewModel = ViewModelProvider(this, factory)[MainViewModel::class.java]
+        viewModel = ViewModelProvider(this, factory)[AuthViewModel::class.java]
 
         viewModel.newData.observe(viewLifecycleOwner) {
             it?.let { res->
