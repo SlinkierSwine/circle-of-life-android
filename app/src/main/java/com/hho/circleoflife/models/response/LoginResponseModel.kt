@@ -1,4 +1,4 @@
-package com.hho.circleoflife.models
+package com.hho.circleoflife.models.response
 
 data class LoginResponseModel(
     val token: String? = null,

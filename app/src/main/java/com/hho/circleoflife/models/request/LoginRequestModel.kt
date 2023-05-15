@@ -1,4 +1,4 @@
-package com.hho.circleoflife.models
+package com.hho.circleoflife.models.request
 
 import com.google.gson.annotations.SerializedName
 

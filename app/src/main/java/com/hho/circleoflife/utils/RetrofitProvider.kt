@@ -12,12 +12,11 @@ object RetrofitProvider {
     val JWT_TOKEN = "token"
 
     private fun getRetrofit(
-        sharedPreferences: SharedPreferences
+        sharedPreferences: SharedPreferences? = null
     ): Retrofit {
-        val authInterceptor = AuthInterceptor(sharedPreferences = sharedPreferences)
+//        val authInterceptor = AuthInterceptor(sharedPreferences = sharedPreferences)
 
         val okHttpClient = OkHttpClient.Builder()
-            .addInterceptor(authInterceptor)
             .build()
 
         return Retrofit.Builder()
@@ -35,6 +34,6 @@ object RetrofitProvider {
         return retrofit.create(AuthAPIService::class.java)
     }
 
-    fun getApiService(sharedPreferences: SharedPreferences): APIService
-            = getRetrofit(sharedPreferences).create(APIService::class.java)
+    fun getApiService(sharedPreferences: SharedPreferences? = null): APIService
+            = getRetrofit().create(APIService::class.java)
 }

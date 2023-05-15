@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
-import com.hho.circleoflife.models.UserInfoResponseModel
+import com.hho.circleoflife.models.response.UserInfoResponseModel
 import com.hho.circleoflife.repository.Repository
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.launchIn

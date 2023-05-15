@@ -2,7 +2,7 @@ package com.hho.circleoflife.repository
 
 import android.content.SharedPreferences
 import com.google.gson.Gson
-import com.hho.circleoflife.models.UserInfoResponseModel
+import com.hho.circleoflife.models.response.UserInfoResponseModel
 import com.hho.circleoflife.utils.RetrofitProvider
 import kotlinx.coroutines.flow.flow
 
