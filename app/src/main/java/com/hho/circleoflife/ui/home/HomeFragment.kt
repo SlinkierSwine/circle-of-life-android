@@ -47,11 +47,16 @@ class HomeFragment : Fragment() {
                 if (res.isLoading) {
                     binding.textMessage.text = "Loading data from server"
                 } else {
-                    binding.textMessage.text = "Successfully loaded data"
+                    if (!res.error.isNullOrEmpty()){
+                        binding.textMessage.text = res.error
+                    } else {
+                        binding.textMessage.text = "Successfully loaded data"
+                    }
 
                     if (!res.message.isNullOrEmpty()){
                         log.warning(res.message)
                     }
+                    log.info(res.ID.toString())
 
                     radarChart = binding.radarChart
                     val sectors = res.sectors

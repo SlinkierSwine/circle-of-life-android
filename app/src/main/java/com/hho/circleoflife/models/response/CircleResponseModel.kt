@@ -5,4 +5,5 @@ data class CircleResponseModel (
     val sectors: List<SectorResponseModel>? = null,
     val isLoading: Boolean = false,
     val message: String? = null,
+    val error: String? = null,
 )
